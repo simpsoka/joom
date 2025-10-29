@@ -21,6 +21,7 @@ fileInput.addEventListener('change', async (event) => {
     try {
       const wad = await wadParser.parse(file);
       console.log('WAD parsed successfully:', wad);
+      console.log(wad);
 
       const canvas = document.getElementById('game-canvas') as HTMLCanvasElement;
       const game = new Game(canvas, wad);

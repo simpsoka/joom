@@ -2,9 +2,10 @@ import * as THREE from 'three';
 import { PlayerController } from './player-controller';
 import { CollisionManager } from './collision-manager';
 import { LevelManager } from './level-manager';
-import { Wad } from '@perry-rylance/doom-wad';
+import type { Wad } from '@perry-rylance/doom-wad';
 
 export class Game {
+  private canvas: HTMLCanvasElement;
   private renderer: THREE.WebGLRenderer;
   private scene: THREE.Scene;
   private camera: THREE.PerspectiveCamera;
@@ -13,7 +14,8 @@ export class Game {
   private collisionManager: CollisionManager;
   private levelManager: LevelManager;
 
-  constructor(private canvas: HTMLCanvasElement, wad: Wad) {
+  constructor(canvas: HTMLCanvasElement, wad: Wad) {
+    this.canvas = canvas;
     this.renderer = new THREE.WebGLRenderer({ canvas });
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(
@@ -30,7 +32,7 @@ export class Game {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.scene.add(new THREE.AmbientLight(0xffffff));
 
-    this.levelManager.buildLevel(wad, 'E1M1');
+    this.levelManager.buildLevel(wad);
 
     this.camera.position.y = 1.8; // Player height
   }

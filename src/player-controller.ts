@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { CollisionManager } from './collision-manager';
+import type { CollisionManager } from './collision-manager';
 
 export class PlayerController {
   private camera: THREE.Camera;

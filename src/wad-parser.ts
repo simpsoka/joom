@@ -4,7 +4,7 @@ export class WadParser {
   public async parse(file: File): Promise<Wad> {
     const arrayBuffer = await file.arrayBuffer();
     const wad = new Wad();
-    await wad.load(new Uint8Array(arrayBuffer));
+    await wad.load(arrayBuffer);
     return wad;
   }
 }

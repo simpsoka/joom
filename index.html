@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doom in the Browser</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    <canvas id="game-canvas"></canvas>
+    <div id="ui-container">
+      <div id="landing-screen">
+        <h1>Doom in the Browser</h1>
+        <button id="upload-wad">Upload WAD</button>
+        <button id="load-demo">Load Demo</button>
+        <input type="text" id="join-room-code" placeholder="Enter room code" />
+        <button id="join-room">Join Room</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
